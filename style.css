@@ -75,7 +75,7 @@ strong {
     }
 }
 
-.button_1 {
+.button1 {
     background-color: rgb(255, 117, 25);
     font-size: 3em;
     padding: 40px 40px;
@@ -91,12 +91,12 @@ strong {
     opacity: 0;
 }
 
-.button_1:hover {
+.button1:hover {
     background-color: rgb(20, 147, 220);
     font-size: 3.2em;
 }
 
-.div_button_1 {
+.divbutton1 {
     margin: 100px 20px;
     height: fit-content;
     width: fit-content;
