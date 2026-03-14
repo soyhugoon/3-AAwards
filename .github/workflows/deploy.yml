@@ -1,19 +1,26 @@
-name: Auto Deploy InfinityFree
+name: Deploy to InfinityFree
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ]          # o master si usas esa rama
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
 
-      - name: Deploy with FreeFlowCI (LFTP)
-        uses: Frost-bit-star/FreeFlowCI@v1
-        with:
-          FTP_USER:   ${{ secrets.FTP_USERNAME }}
-          FTP_PASS:   ${{ secrets.FTP_PASSWORD }}
-          # Opcional: si tu carpeta no es la raíz
-          # SOURCE_DIR: dist/   (por ejemplo si tienes build)
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server:     ${{ secrets.FTP_SERVER }}
+        username:   ${{ secrets.FTP_USERNAME }}
+        password:   ${{ secrets.FTP_PASSWORD }}
+        local-dir:  ./
+        server-dir: ${{ secrets.FTP_REMOTE_DIR }}
+        exclude:    |
+          **/.git*
+          **/node_modules/**
+          **/.github/**
