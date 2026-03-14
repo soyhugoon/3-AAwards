@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    font-family: 'Lexend';
+    font-weight: 200;
+    text-align: center;
+    transition: 0.5s;
+    text-decoration: none;
+    
+    
+}
+
+body {
+    background-color: #000000;
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, button {
+    color: white;
+}
+
+img {
+    pointer-events: none;
+    user-select: none;
+}
+
+
+
+.imagen_banner {
+    width: min(50em, 100vw);
+    height: auto;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: transparent;
+
+    /* Mueve la imagen hacia abajo 100px tras 1s */
+    animation: inicial ease 1s forwards;
+    
+}
+
+#banner_1 {
+    background-image: linear-gradient(to top, #000000, #0a2631 70%);
+    min-width: fit-content;
+    max-width: 100%;
+}
+
+h3 {
+    font-size: 3em;
+    margin: 20px 20px;
+}
+
+.titulo {
+    opacity: 0;
+    animation: inicial ease 1s forwards;
+    animation-delay: 0.3s;
+}
+
+strong {
+    font-weight: 500;
+}
+
+@keyframes inicial {
+    from {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+button {
+    font-size: 2.5em;
+    padding: 30px 60px;
+    margin: 30px;
+    font-weight: 800;
+    border: none;
+    border-radius: 20px;
+    background-color: #0d4961;
+    box-shadow: #0a2631 10px 10px 0;
+    user-select: none;
+    animation: inicial ease 1s forwards;
+    animation-delay: 0.6s;
+    opacity: 0;
+
+}
+
+button:hover {
+    cursor: pointer;
+    text-shadow: white 0 0 10px;
+    background-color: #20ad27;
+    box-shadow: #25610d 10px 10px 0;
+    font-size: 3em;
+}
