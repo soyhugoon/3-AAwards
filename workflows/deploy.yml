@@ -1,0 +1,19 @@
+name: Auto Deploy InfinityFree
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy with FreeFlowCI (LFTP)
+        uses: Frost-bit-star/FreeFlowCI@v1
+        with:
+          FTP_USER:   ${{ secrets.FTP_USERNAME }}
+          FTP_PASS:   ${{ secrets.FTP_PASSWORD }}
+          # Opcional: si tu carpeta no es la raíz
+          # SOURCE_DIR: dist/   (por ejemplo si tienes build)
