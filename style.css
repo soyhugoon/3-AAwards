@@ -59,10 +59,6 @@ p {
     font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-header {
-    height: 100vh;
-}
-
 .titulo {
     opacity: 0;
     animation: inicial ease 1s forwards;
@@ -101,13 +97,22 @@ strong {
     animation: inicial ease 1s forwards;
     animation-delay: 0.6s;
     opacity: 0;
+    margin-bottom: 13rem;    
+}
+
+.divbutton2 {
+    transition: 0.3s;
+}
+
+.divbutton2:hover {
+    transform: scale(1.03);
 }
 
 .categorias {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+        gap: 1rem;
     padding: 1rem;
 }
 
